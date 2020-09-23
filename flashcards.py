@@ -1,11 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template
 from datetime import datetime
+
+from model import db
+
 app = Flask(__name__)
 
 
 @app.route("/")
 def welcome():
-    return "Welcome to my flash cards application!"
+    return render_template(
+        "welcome.html",
+        message="Here's a message from the view"
+        )
 
 
 @app.route("/date")
@@ -21,3 +27,9 @@ def stalker():
     global numberOfTimes
     numberOfTimes += 1
     return "This page has been viewed " + str(numberOfTimes) + " times!"
+
+
+@app.route("/card")
+def card_view():
+    card = db[0]
+    return render_template("card.html", card=card)
