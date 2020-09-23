@@ -1,6 +1,9 @@
 #Virtual Environment
 surfEnv/
 
+#settings
+.vscode/settings.json
+
 #Flask
 instance/*
 !instance/.gitignore
