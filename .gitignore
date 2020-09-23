@@ -1,0 +1,16 @@
+#Virtual Environment
+surfEnv/
+
+#settings
+.vscode/settings.json
+
+#Flask
+instance/*
+!instance/.gitignore
+.webassets-cache
+
+#Flask.Python stack
+#Byte compiled/ optimized/ DLL files
+__pycache__/
+*.py[cod]
+*$py.class
