@@ -9,8 +9,8 @@ app = Flask(__name__)
 def welcome():
     return render_template(
         "welcome.html",
-        message="Here's a message from the view"
-        )
+        cards=db
+    )
 
 
 numberOfTimes = 0
