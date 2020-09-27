@@ -11,4 +11,11 @@ def save_db():
         return json.dump(db, f)
 
 
+def remove_element(question):
+    load_db()
+    for element in db:
+        element.pop(question, None)
+    save_db()
+
+
 db = load_db()
